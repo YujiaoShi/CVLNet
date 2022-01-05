@@ -437,8 +437,8 @@ if __name__ == '__main__':
             RankTest(net, args, batch_count, sequence, test_wo_destractors=True)
 
         else:
-            # for sequence in reversed(range(1, 17)):
-            for sequence in [1, 4]:
+            for sequence in reversed(range(1, 17)):
+            # for sequence in [1, 4]:
                 print(sequence, '/16')
                 net = FuseModel(debug_flag=args.debug, sequence=sequence, stereo=args.stereo, feature_win=32,
                                 # height_planes=args.height_planes,
