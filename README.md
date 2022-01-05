@@ -11,38 +11,65 @@ Moreover, our SSM strategy estimates the displacement between a query camera loc
 ### Experiment Dataset
 Our experiments is conducted on the KITTI dataset. 
 Please first download the raw data (ground images) from http://www.cvlibs.net/datasets/kitti/raw_data.php, and store them according to different date (not category). 
-For our collected satellite images for both datasets, please first fill this [Google Form](https://forms.gle/Bm8jNLiUxFeQejix7), we will then send you the link for download. 
+For our collected satellite images for both datasets, please first fill this [Google Form](https://forms.gle/61V7fVR2FE5emHDM6), we will then send you the link for download. 
 
 Your dataset folder structure should be like: 
 
 KITTI:
+
   raw_data:
+  
     2011_09_26:
+    
       2011_09_26_drive_0001_sync:
+      
         image_00:
-	      image_01:
+	
+	image_01:
+	
         image_02:
+	
         image_03:
+	
         oxts:
+	
       ...
+      
     2011_09_28:
+    
     2011_09_29:
+    
     2011_09_30:
+    
     2011_10_03:
   
+  
   satmap:
+  
     train_10mgap:
+    
       2011_09_26:
+      
       2011_09_29:
+      
       2011_09_30:
+      
       2011_10_03:
+      
     test:
+    
       2011_09_26_drive_0002_sync
+      
       2011_09_26_drive_0005_sync
+      
       2011_09_26_drive_0015_sync
+      
       2011_09_26_drive_0036_sync
+      
       2011_09_26_drive_0046_sync
+      
       2011_09_30_drive_0016_sync
+      
       2011_09_30_drive_0034_sync
 
 ### Codes
@@ -57,7 +84,7 @@ python test.py
 In the test.py, "test_wo_destractors=True" indicates testing on both Test1 and Tes2; "test_wo_destractors=False" indicates only test on Test2. 
 
 ### Models:
-Our trained model is available [here](https://anu365-my.sharepoint.com/:f:/g/personal/u6293587_anu_edu_au/Ev7HAgSDze5LhvRWfcM4AgEBJiSr6W0GuTEEfdhWHG_gSQ?e=vNtwCJ). 
+Our trained model is available [here](https://anu365-my.sharepoint.com/:u:/g/personal/u6293587_anu_edu_au/EVVeze8yhfpGpsrpuAJDpP0BqS86odkmeeQyu1rdDBJOSA?e=I9Hsk7). 
 
 
 
