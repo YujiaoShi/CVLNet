@@ -1,6 +1,6 @@
 # CVLNet
 CVPR2022 submission "CVLNet: Cross-View Semantic Correspondence Learning for Video-based Camera Localization"
-![alt text](./Framework.png)
+![alt text](./VBL_Framework.png)
 
 # Abstract
 In this paper, we tackle cross-view video-based camera localization. The task is to determine the pose of a ground-based camera from a continuous sequence of images by matching them to a large overhead satellite image. 
