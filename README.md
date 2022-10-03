@@ -1,5 +1,5 @@
 # CVLNet
-CVPR2022 submission "CVLNet: Cross-View Semantic Correspondence Learning for Video-based Camera Localization"
+ACCV2022 oral "CVLNet: Cross-View Semantic Correspondence Learning for Video-based Camera Localization"
 ![alt text](./VBL_Framework.png)
 
 # Abstract
@@ -89,5 +89,5 @@ Our trained model is available [here](https://anu365-my.sharepoint.com/:u:/g/per
 
 
 ### Publications
-This work is published in CVPR 2022.  
+This work is published in ACCV 2022.  
 [CVLNet: Cross-View Semantic Correspondence Learning for Video-based Camera Localization]
