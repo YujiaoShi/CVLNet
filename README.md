@@ -1,5 +1,5 @@
 # CVLNet
-ACCV2022 oral "CVLNet: Cross-View Semantic Correspondence Learning for Video-based Camera Localization"
+ACCV2022 oral "CVLNet: Cross-View Feature Correspondence Learning for Video-based Camera Localization"
 ![alt text](./VBL_Framework.png)
 
 # Abstract
