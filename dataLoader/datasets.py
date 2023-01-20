@@ -49,7 +49,7 @@ class SatGrdDataset(Dataset):
         else:
             self.pro_grdimage_dir = 'raw_data'
 
-        self.satmap_dir = satmap_dir
+        # self.satmap_dir = satmap_dir
 
         if use_polar_sat:
             self.satmap_dir = 'satmap_polar/train_10mgap'
@@ -299,7 +299,6 @@ class SatGrdDataset(Dataset):
         return sat_map, left_camera_k, right_camera_k, grd_left_imgs, grd_right_imgs, \
                loc_shift_left, loc_shift_right, heading_array, loc_left_array, loc_sat, file_name
 
-
 class GrdDataset(Dataset):
     def __init__(self, root, stereo=False, sequence=False,
                  transform=None, use_project_grd=0, use_semantic=0):
@@ -442,10 +441,12 @@ class GrdDataset(Dataset):
         for i in range(len(sequence_list)):
             file_name = sequence_list[i]
             image_no = file_name[38:]
+            # print("****** image_no: ", image_no)
 
             # oxt: such as 0000000000.txt
             oxts_file_name = os.path.join(self.root, grdimage_dir, drive_dir, oxts_dir,
                                           image_no.lower().replace('.png', '.txt'))
+            # print("****** oxts_file_name: ",oxts_file_name)
             with open(oxts_file_name, 'r') as f:
                 content = f.readline().split(' ')
 
@@ -527,7 +528,6 @@ class GrdDataset(Dataset):
         return left_camera_k, right_camera_k, grd_left_imgs, grd_right_imgs, \
                loc_shift_left, loc_shift_right, heading_array, loc_left_array, file_name
 
-
 class SatDataset1(Dataset):  # without distractor, each satellite image corresponds to at least one grd image
     def __init__(self, root, gap_map=False,
                  transform=None, use_polar_sat=0):
@@ -602,7 +602,7 @@ class SatDataset1(Dataset):  # without distractor, each satellite image correspo
         # x, y = utils.get_camera_gps_shift_left(heading_array[0].item())  # shift <1.4m
         # meter_per_pixel = utils.get_meter_per_pixel(scale=1)
         # shift_xy = (np.array([x, y]) / meter_per_pixel).astype(np.int32)
-        if 'polar' in self.test_sat_dir:
+        if 'polar' not in self.test_sat_dir:
             # crop out the central region
             SatMap_sidelength = utils.get_original_satmap_sidelength()
             width, height = sat_map.size
@@ -622,13 +622,12 @@ class SatDataset1(Dataset):  # without distractor, each satellite image correspo
 
         return sat_map, loc_sat
 
-
 class SatDataset2(Dataset):  # with distractor, there are many satellite images that do not have corresponding grd images.
     def __init__(self, root, transform=None, use_polar_sat=0):
         self.root = root
         self.transform = transform
 
-        if use_polar_sat:
+        if use_polar_sat:    #no use it
             self.test_sat_dir = 'satmap_polar/test'
         else:
             self.test_sat_dir = 'satmap/test'
@@ -649,7 +648,7 @@ class SatDataset2(Dataset):  # with distractor, there are many satellite images 
 
             if subdir not in test_df.values:
                 continue
-
+            # print(">>>>>>>>>>>>>>>>>> test2: ",os.path.join(root, self.test_sat_dir, subdir))
             items = os.listdir(os.path.join(root, self.test_sat_dir, subdir))
             # order items
             items.sort()
